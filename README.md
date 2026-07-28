@@ -138,3 +138,15 @@ It is not a replacement for professional medical advice.
 
 Prathwik H Devadiga
 >>>>>>> e7a5b8b9fdb1af5faa1cef490e63a1e5e3fc5fad
+Task 2 – Medical Q&A Chatbot
+✓ MedQuAD Dataset
+✓ TF-IDF Retrieval
+✓ Medical Entity Recognition
+✓ Streamlit Interface
+
+Task 3 – Dynamic Knowledge Base
+✓ Extends Task 2
+✓ Automatic Knowledge Updates
+✓ Scheduler
+✓ Vector Database Update
+✓ New Questions Added Without Retraining
