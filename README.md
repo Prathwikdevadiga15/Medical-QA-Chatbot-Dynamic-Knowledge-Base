@@ -1,152 +1,141 @@
-<<<<<<< HEAD
-## 🔄 Dynamic Knowledge Base
+# 🏥 Medical Q&A Chatbot with Dynamic Knowledge Base
 
-The Medical AI Assistant uses a dynamic knowledge-base system that allows new medical information to be incorporated into the chatbot over time without retraining the complete machine-learning model.
+A Medical Question Answering chatbot built using **Python, Streamlit, ChromaDB, TF-IDF Retrieval, and the MedQuAD Dataset**. The chatbot supports **dynamic knowledge base expansion**, allowing new medical information to be added automatically without retraining the underlying retrieval model.
 
-### Workflow
-
-New Medical Information
-        ↓
-new_questions.csv
-        ↓
-scheduler.py
-        ↓
-knowledge_updater.py
-        ↓
-Duplicate Detection
-        ↓
-Sentence Embeddings
-        ↓
-ChromaDB Vector Database
-        ↓
-Semantic Search
-        ↓
-Dynamic Medical Chatbot
-        ↓
-Updated Medical Response
-
-### Components
-
-- `new_questions.csv` — Stores newly added medical question-answer pairs.
-- `knowledge_updater.py` — Reads new information and adds it to the vector database.
-- `scheduler.py` — Periodically checks for new medical information.
-- ChromaDB — Stores medical knowledge as vector embeddings.
-- `dynamic_chatbot.py` — Performs semantic search and retrieves relevant answers.
-- `app.py` — Provides the Streamlit user interface.
-
-### Duplicate Prevention
-
-The system checks whether a question already exists in the vector database. Existing questions are skipped, preventing duplicate knowledge from being added.
-
-### Testing Result
-
-A new question was added:
-
-**Question:** What is migraine?
-
-The system successfully:
-
-1. Detected the new question.
-2. Added it to the vector database.
-3. Increased the total document count.
-4. Retrieved the information through the chatbot.
-5. Returned the correct answer to the user.
-
-### Example Result
-
-**User Question:**
-
-What is migraine?
-
-**Chatbot Answer:**
-
-Migraine is a neurological condition that can cause severe headache and other symptoms.
-
-### Outcome
-
-The dynamic knowledge-base system successfully enables the chatbot to incorporate new medical information over time without requiring complete model retraining.
-=======
-# 🩺 Dynamic Medical QA Chatbot
-
-An AI-powered medical question-answering chatbot with a dynamically expanding knowledge base.
+---
 
 ## 🚀 Features
 
-- 🩺 Medical Question Answering
+- 🏥 Medical Question Answering
+- 📚 MedQuAD Dataset Integration
+- 🔍 TF-IDF Retrieval
+- 🧬 Medical Entity Recognition
+- 🗂 ChromaDB Vector Database
 - 🔄 Dynamic Knowledge Base Updates
-- 🧠 Semantic Search using Sentence Transformers
-- 🗄️ ChromaDB Vector Database
-- ⏰ Automatic Scheduled Updates
-- 🔎 Medical Entity Recognition
-- 😊 Sentiment Analysis
-- 🌐 Streamlit Web Interface
-- 🚫 Duplicate Question Detection
+- ⏰ Automatic Scheduler
+- 🚫 Duplicate Entry Detection
+- 📈 Semantic Search
+- 🎨 Streamlit Web Interface
 
-## 🏗️ System Architecture
+---
 
-User Question
-↓
-Streamlit Interface
-↓
-Medical Question Processing
-↓
-Semantic Search
-↓
-ChromaDB Vector Database
-↓
-Relevant Medical Answer
-
-## 🔄 Dynamic Knowledge Base
-
-New questions can be added to:
-
-datasets/new_questions.csv
-
-The scheduler automatically checks for new questions and adds them to the vector database.
-
-## 🛠️ Technologies Used
+## 🛠 Technologies Used
 
 - Python
 - Streamlit
 - ChromaDB
-- Sentence Transformers
-- spaCy
-- TextBlob
-- Pandas
 - Scikit-learn
+- Pandas
+- spaCy
+- Sentence Transformers
+- TF-IDF Vectorizer
 
-## ▶️ How to Run
+---
 
-Install dependencies:
+## 📂 Project Structure
 
+```
+Medical-QA-Chatbot-Dynamic-Knowledge-Base/
+│
+├── app.py
+├── dynamic_chatbot.py
+├── knowledge_updater.py
+├── scheduler.py
+├── entity_recognition.py
+├── new_questions.csv
+├── requirements.txt
+├── README.md
+├── chroma_db/
+└── data/
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Prathwikdevadiga15/Medical-QA-Chatbot-Dynamic-Knowledge-Base.git
+```
+
+Move into the project directory
+
+```bash
+cd Medical-QA-Chatbot-Dynamic-Knowledge-Base
+```
+
+Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-Start the chatbot:
+---
 
+## ▶️ Run the Application
+
+```bash
 streamlit run app.py
+```
 
-Run the scheduler:
+---
 
-python scheduler.py
+## 📖 How It Works
 
-## ⚠️ Disclaimer
+1. User asks a medical question.
+2. The chatbot searches the MedQuAD knowledge base.
+3. Medical entities are extracted from the query.
+4. If new medical data exists, the scheduler updates the ChromaDB vector database.
+5. Duplicate entries are ignored.
+6. Semantic search retrieves the most relevant answer.
+7. The answer is displayed in the Streamlit interface.
 
-This chatbot is for educational and informational purposes only.
-It is not a replacement for professional medical advice.
+---
+
+## 🎯 Assignment Objectives Achieved
+
+- ✅ Medical Question Answering
+- ✅ MedQuAD Dataset
+- ✅ TF-IDF Retrieval
+- ✅ Medical Entity Recognition
+- ✅ Dynamic Knowledge Base Expansion
+- ✅ Automatic Knowledge Updates
+- ✅ Scheduler Integration
+- ✅ Vector Database
+- ✅ No Model Retraining Required
+- ✅ Interactive Streamlit Interface
+
+---
+
+## 📸 Example
+
+**Question**
+
+What are the symptoms of diabetes?
+
+**Answer**
+
+Common symptoms include increased thirst, frequent urination, fatigue, blurred vision, unexplained weight loss, and slow wound healing.
+
+---
+
+## 🔮 Future Improvements
+
+- Integration with latest medical publications
+- LLM-powered answer generation
+- Medical document upload support
+- Multi-language support
+- Voice interaction
+
+---
 
 ## 👨‍💻 Author
 
-Prathwik H Devadiga
->>>>>>> e7a5b8b9fdb1af5faa1cef490e63a1e5e3fc5fad
-Task 2 – Medical Q&A Chatbot
-✓ MedQuAD Dataset
-✓ TF-IDF Retrieval
-✓ Medical Entity Recognition
-✓ Streamlit Interface
+**Prathwik H Devadiga**
 
-Task 3 – Dynamic Knowledge Base
-✓ Extends Task 2
-✓ Automatic Knowledge Updates
-✓ Scheduler
-✓ Vector Database Update
-✓ New Questions Added Without Retraining
+GitHub: https://github.com/Prathwikdevadiga15
+
+---
+
+⭐ If you found this project useful, please consider giving it a star.
